@@ -9,3 +9,6 @@ Download the twitter.php to your application/library directory
 Replace variables in the twitter.php library with your own and you're good to go.  
 
 Check out the twitterexamples.php controller for some example requests
+
+Featured added:
+- Added a config file for nice and ease configurations set up.  

@@ -40,15 +40,17 @@ class Twitter
 
     function __construct()
     {
-        $this->_consumerKey = 'Enter your consumer key here';
-        $this->_consumerSecret = 'Enter your consumer secret here';
-        $this->_oAuthToken = 'Enter your access token here';
-        $this->_oAuthSecret = 'Enter your access token secret here';
+        $this->config->load('twitter');
+
+        $this->_consumerKey = $this->config->item('consumerKey');
+        $this->_consumerSecret = $this->config->item('consumerSecret');
+        $this->_oAuthToken = $this->config->item('oAuthToken');
+        $this->_oAuthSecret = $this->config->item('oAuthSecret');
         $this->_oAuthNonce = $this->generateNonce();
-        $this->_oAuthSignature = '';
-        $this->_oAuthSignatureMethod = 'HMAC-SHA1';
-        $this->_oAuthTimeStamp = date('U');
-        $this->_oAuthVersion = '1.0';
+        $this->_oAuthSignature = $this->config->item('oAuthSignature');;
+        $this->_oAuthSignatureMethod = $this->config->item('oAuthSignatureMethod');
+        $this->_oAuthTimeStamp = $this->config->item('oAuthTimeStamp');
+        $this->_oAuthVersion = $this->config->item('oAuthVersion');
     }
     
     /*
