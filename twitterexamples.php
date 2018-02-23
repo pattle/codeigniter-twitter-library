@@ -37,7 +37,7 @@ class Twitterexamples extends CI_Controller
      */
     function sendTweet()
     {
-        $response = $this->twitter->request('POST', 'http://api.twitter.com/1.1/statuses/update.json', array('include_entities' => 'true', 'status' => 'I want cookies'));
+        $response = $this->twitter->request('POST', 'https://api.twitter.com/1.1/statuses/update.json', array('include_entities' => 'true', 'status' => 'I want cookies'));
     }
     
     /*
@@ -49,7 +49,7 @@ class Twitterexamples extends CI_Controller
      */
     function getTweets()
     {
-        $response = $this->twitter->request('GET', 'http://api.twitter.com/1.1/statuses/user_timeline.json', array('include_entities' => 'true'));
+        $response = $this->twitter->request('GET', 'https://api.twitter.com/1.1/statuses/user_timeline.json', array('include_entities' => 'true'));
     }
 
     /*
